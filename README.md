@@ -1,10 +1,11 @@
 # Git server with SSL and authentication
 
-Git is behind nginx providing basic auth and TLS. It is git in HTTP Smart mode (git-http-backend) + Basic HTTP Authentication + HTTPS redirect
+A set of containers to provide a Git server HTTPS and basic authentication. Git in HTTP Smart mode (git-http-backend) + Basic HTTP Authentication + HTTPS redirect.
+Nginx is used to front the GIT traffic, providing BA and TLS. It is 
 
 ## Building
 
-	dc build
+	docker-compose build
 
 ## Running
 

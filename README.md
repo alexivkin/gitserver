@@ -1,7 +1,6 @@
 # Git server with SSL and authentication
 
-A set of containers to provide a Git server HTTPS and basic authentication. Git in HTTP Smart mode (git-http-backend) + Basic HTTP Authentication + HTTPS redirect.
-Nginx is used to front the GIT traffic, providing BA and TLS. It is 
+A set of containers to provide a Git server HTTPS and basic authentication. It provides "Git in HTTP Smart mode" (git-http-backend) with Basic HTTP Authentication and HTTPS redirect, by using nginx as a reverse proxy for the GIT, BA and TLS traffic.
 
 ## Building
 
@@ -24,7 +23,7 @@ Note, if you are using self signed certs or a private CA use `git -c http.sslVer
 
 The start with `dc run` or
 
-	docker run --name gitserver --rm -it -v $(pwd)/ssl:/etc/nginx/ssl -v $(pwd)/git:/git -v $(pwd)/.htpasswd:/www/.htpasswd -p 8443:443 alexivkin/gitserver
+	docker run --name gitserver --rm -it -v $(pwd)/ssl:/etc/nginx/ssl -v $(pwd)/git:/git -v $(pwd)/.htpasswd:/.htpasswd -p 8443:443 alexivkin/gitserver
 
 Once it is started, create a repo on the server
 
